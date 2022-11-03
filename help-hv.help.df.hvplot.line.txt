@@ -1,0 +1,278 @@
+hv.help(df.hvplot.line):
+
+
+Help on method line in module hvplot.plotting.core:
+
+line(x=None, y=None, *, alpha, color, hover_alpha, hover_color, hover_line_alpha, hover_line_cap, hover_line_color, hover_line_dash, hover_line_join, hover_line_width, line_alpha, line_cap, line_color, line_dash, line_join, line_width, muted, muted_alpha, muted_color, muted_line_alpha, muted_line_cap, muted_line_color, muted_line_dash, muted_line_join, muted_line_width, nonselection_alpha, nonselection_color, nonselection_line_alpha, nonselection_line_cap, nonselection_line_color, nonselection_line_dash, nonselection_line_join, nonselection_line_width, selection_alpha, selection_color, selection_line_alpha, selection_line_cap, selection_line_color, selection_line_dash, selection_line_join, selection_line_width, visible, width, height, shared_axes, grid, legend, rot, xlim, ylim, xticks, yticks, colorbar, invert, title, logx, logy, loglog, xaxis, yaxis, xformatter, yformatter, xlabel, ylabel, clabel, padding, responsive, max_height, max_width, min_height, min_width, frame_height, frame_width, aspect, data_aspect, fontscale, datashade, rasterize, x_sampling, y_sampling, aggregator, **kwargs) method of hvplot.plotting.core.hvPlotTabular instance
+    The `line` plot connects the points with a continous curve.
+    
+    A `line` plot is useful when data is continuous and has a continuous axis.
+    
+    Reference: https://hvplot.holoviz.org/reference/pandas/line.html
+    
+    Parameters
+    ----------
+    x : string, optional
+        Field name(s) to draw x-positions from. If not specified, the index is
+        used.
+    y : string or list, optional
+        Field name(s) to draw y-positions from. If not specified, all numerical
+        fields are used.
+    by : string, optional
+        A single column or list of columns to group by. All the subgroups are visualized.
+    groupby: string, list, optional
+        A single field or list of fields to group and filter by. Adds one or more widgets to
+        select the subgroup(s) to visualize.
+    color : str or array-like, optional.
+        The color for each of the series. Possible values are:
+    
+        A single color string referred to by name, RGB or RGBA code, for instance 'red' or
+        '#a98d19.
+    
+        A sequence of color strings referred to by name, RGB or RGBA code, which will be used
+        for each series recursively. For instance ['green','yellow'] each field’s line will be
+        filled in green or yellow, alternatively. If there is only a single series to be
+        plotted, then only the first color from the color list will be used.
+    **kwds : optional
+        Additional keywords arguments are documented in `hvplot.help('line')`.
+    
+    Returns
+    -------
+    A Holoviews object. You can `print` the object to study its composition and run
+    
+    >>> import holoviews as hv
+    >>> hv.help(the_holoviews_object)
+    
+    to learn more about its parameters and options.
+    
+    Examples
+    --------
+    
+    >>> import hvplot.pandas
+    >>> from bokeh.sampledata.degrees import data as deg
+    >>> line = deg.hvplot.line(
+    ...     x='Year', y=['Art and Performance', 'Business', 'Biology', 'Education', 'Computer Science'],
+    ...     value_label='% of Degrees Earned by Women', legend='top', height=500, width=620
+    ... )
+    >>> line
+    
+    You can can add *markers* to a `line` plot by overlaying with a `scatter` plot.
+    
+    >>> scatter = deg.hvplot.scatter(
+    ...     x='Year', y=['Art and Performance', 'Business', 'Biology', 'Education', 'Computer Science'],
+    ...     value_label='% of Degrees Earned by Women', legend='top', height=500, width=620
+    ... )
+    >>> line * scatter
+    
+    Please note that you can pass widgets or reactive functions as arguments instead of
+    literal values, c.f. https://hvplot.holoviz.org/user_guide/Widgets.html.
+    
+    References
+    ----------
+    
+    - Bokeh: https://docs.bokeh.org/en/latest/docs/reference/models/glyphs/line.html
+    - HoloViews: https://holoviews.org/reference/elements/bokeh/Curve.html
+    - Pandas: https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.line.html
+    - Plotly: https://plotly.com/python/line-charts/
+    - Matplotlib: https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html
+    - Wiki: https://en.wikipedia.org/wiki/Line_chart
+    
+    
+    Generic options
+    ---------------
+    clim: tuple
+        Lower and upper bound of the color scale
+    cnorm (default='linear'): str
+        Color scaling which must be one of 'linear', 'log' or 'eq_hist'
+    colorbar (default=False): boolean
+        Enables a colorbar
+    fontscale: number
+        Scales the size of all fonts by the same amount, e.g. fontscale=1.5
+        enlarges all fonts (title, xticks, labels etc.) by 50%
+    fontsize: number or dict
+        Set title, label and legend text to the same fontsize. Finer control
+        by using a dict: {'title': '15pt', 'ylabel': '5px', 'ticks': 20}
+    flip_xaxis/flip_yaxis: boolean
+        Whether to flip the axis left to right or up and down respectively
+    grid (default=False): boolean
+        Whether to show a grid
+    hover : boolean
+        Whether to show hover tooltips, default is True unless datashade is
+        True in which case hover is False by default
+    hover_cols (default=[]): list or str
+        Additional columns to add to the hover tool or 'all' which will
+        includes all columns (including indexes if use_index is True).
+    invert (default=False): boolean
+        Swaps x- and y-axis
+    frame_width/frame_height: int
+        The width and height of the data area of the plot
+    legend (default=True): boolean or str
+        Whether to show a legend, or a legend position
+        ('top', 'bottom', 'left', 'right')
+    logx/logy (default=False): boolean
+        Enables logarithmic x- and y-axis respectively
+    logz (default=False): boolean
+        Enables logarithmic colormapping
+    loglog (default=False): boolean
+        Enables logarithmic x- and y-axis
+    max_width/max_height: int
+        The maximum width and height of the plot for responsive modes
+    min_width/min_height: int
+        The minimum width and height of the plot for responsive modes
+    padding: number or tuple
+        Fraction by which to increase auto-ranged extents to make
+        datapoints more visible around borders. Supports tuples to
+        specify different amount of padding for x- and y-axis and
+        tuples of tuples to specify different amounts of padding for
+        upper and lower bounds.
+    rescale_discrete_levels (default=True): boolean
+        If `cnorm='eq_hist` and there are only a few discrete values,
+        then `rescale_discrete_levels=True` (the default) decreases
+        the lower limit of the autoranged span so that the values are
+        rendering towards the (more visible) top of the `cmap` range, 
+        thus avoiding washout of the lower values.  Has no effect if
+        `cnorm!=`eq_hist`.
+    responsive: boolean
+        Whether the plot should responsively resize depending on the
+        size of the browser. Responsive mode will only work if at
+        least one dimension of the plot is left undefined, e.g. when
+        width and height or width and aspect are set the plot is set
+        to a fixed size, ignoring any responsive option.
+    rot: number
+        Rotates the axis ticks along the x-axis by the specified
+        number of degrees.
+    shared_axes (default=True): boolean
+        Whether to link axes between plots
+    transforms (default={}): dict
+        A dictionary of HoloViews dim transforms to apply before plotting
+    title (default=''): str
+        Title for the plot
+    tools (default=[]): list
+        List of tool instances or strings (e.g. ['tap', box_select'])
+    xaxis/yaxis: str or None
+        Whether to show the x/y-axis and whether to place it at the
+        'top'/'bottom' and 'left'/'right' respectively.
+    xformatter/yformatter (default=None): str or TickFormatter
+        Formatter for the x-axis and y-axis (accepts printf formatter,
+        e.g. '%.3f', and bokeh TickFormatter)
+    xlabel/ylabel/clabel (default=None): str
+        Axis labels for the x-axis, y-axis, and colorbar
+    xlim/ylim (default=None): tuple or list
+        Plot limits of the x- and y-axis
+    xticks/yticks (default=None): int or list
+        Ticks along x- and y-axis specified as an integer, list of
+        ticks positions, or list of tuples of the tick positions and labels
+    width (default=700)/height (default=300): int
+        The width and height of the plot in pixels
+    attr_labels (default=None): bool
+        Whether to use an xarray object's attributes as labels, defaults to
+        None to allow best effort without throwing a warning. Set to True
+        to see warning if the attrs can't be found, set to False to disable
+        the behavior.
+    sort_date (default=True): bool
+        Whether to sort the x-axis by date before plotting
+    symmetric (default=None): bool
+        Whether the data are symmetric around zero. If left unset, the data
+        will be checked for symmetry as long as the size is less than
+        ``check_symmetric_max``.
+    check_symmetric_max (default=1000000):
+        Size above which to stop checking for symmetry by default on the data.
+    
+    Datashader options
+    ------------------
+    aggregator (default=None):
+        Aggregator to use when applying rasterize or datashade operation
+        (valid options include 'mean', 'count', 'min', 'max' and more, and
+        datashader reduction objects)
+    dynamic (default=True):
+        Whether to return a dynamic plot which sends updates on widget and
+        zoom/pan events or whether all the data should be embedded
+        (warning: for large groupby operations embedded data can become
+        very large if dynamic=False)
+    datashade (default=False):
+        Whether to apply rasterization and shading (colormapping) using
+        the Datashader library, returning an RGB object instead of 
+        individual points
+    dynspread (default=False):
+        For plots generated with datashade=True or rasterize=True, 
+        automatically increase the point size when the data is sparse
+        so that individual points become more visible
+    rasterize (default=False):
+        Whether to apply rasterization using the Datashader library,
+        returning an aggregated Image (to be colormapped by the 
+        plotting backend) instead of individual points
+    x_sampling/y_sampling (default=None):
+        Specifies the smallest allowed sampling interval along the x/y axis.
+    
+    Geographic options
+    ------------------
+    coastline (default=False):
+        Whether to display a coastline on top of the plot, setting
+        coastline='10m'/'50m'/'110m' specifies a specific scale.
+    crs (default=None):
+        Coordinate reference system of the data specified as Cartopy
+        CRS object, proj.4 string or EPSG code.
+    features (default=None): dict or list
+        A list of features or a dictionary of features and the scale
+        at which to render it. Available features include 'borders',
+        'coastline', 'lakes', 'land', 'ocean', 'rivers' and 'states'.
+        Available scales include '10m'/'50m'/'110m'.
+    geo (default=False):
+        Whether the plot should be treated as geographic (and assume
+        PlateCarree, i.e. lat/lon coordinates).
+    global_extent (default=False):
+        Whether to expand the plot extent to span the whole globe.
+    project (default=False):
+        Whether to project the data before plotting (adds initial
+        overhead but avoids projecting data when plot is dynamically
+        updated).
+    tiles (default=False):
+        Whether to overlay the plot on a tile source. Tiles sources
+        can be selected by name or a tiles object or class can be passed,
+        the default is 'Wikipedia'.
+    
+    Style options
+    -------------
+    
+    alpha
+    color
+    hover_alpha
+    hover_color
+    hover_line_alpha
+    hover_line_cap
+    hover_line_color
+    hover_line_dash
+    hover_line_join
+    hover_line_width
+    line_alpha
+    line_cap
+    line_color
+    line_dash
+    line_join
+    line_width
+    muted
+    muted_alpha
+    muted_color
+    muted_line_alpha
+    muted_line_cap
+    muted_line_color
+    muted_line_dash
+    muted_line_join
+    muted_line_width
+    nonselection_alpha
+    nonselection_color
+    nonselection_line_alpha
+    nonselection_line_cap
+    nonselection_line_color
+    nonselection_line_dash
+    nonselection_line_join
+    nonselection_line_width
+    selection_alpha
+    selection_color
+    selection_line_alpha
+    selection_line_cap
+    selection_line_color
+    selection_line_dash
+    selection_line_join
+    selection_line_width
+    visible
