@@ -5,6 +5,8 @@ import panel as pn
 import hvplot.pandas
 import holoviews as hv
 
+pn.extension(sizing_mode="stretch_width")
+
 # -------------------------------------------------------------------------------------------
 # Utilities
 # -------------------------------------------------------------------------------------------
