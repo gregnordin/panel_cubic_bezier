@@ -47,3 +47,54 @@ Use [Awesome panel hello-world example](https://github.com/awesome-panel/example
 Then open html file in a browser.
     
 ## Try running as standalone html file
+
+```
+(try_panel)
+$ panel convert interactive_cubic_Bezier_curve.py --to pyodide-worker --out docs/interactive_cubic_Bezier_curve
+Successfully converted interactive_cubic_Bezier_curve.py to pyodide-worker target and wrote output to interactive_cubic_Bezier_curve.html.
+```
+
+To run:
+
+```
+```
+
+To run, start http server:
+
+```
+(try_panel)
+nordin@ECEns-MBP-4 ~/Documents/Projects/2022_Projects/panel_cubic_bezier (main)*
+$ python -m http.server
+Serving HTTP on :: port 8000 (http://[::]:8000/) ...
+```
+
+and point browser at `http://localhost:8000/docs/interactive_cubic_Bezier_curve/interactive_cubic_Bezier_curve.html`. Tried `Brave`, `Safari`, `Chrome`.
+
+**Problems**
+
+- Slider control points are not visible, making it very inconvenient to change values.
+- Theme toggle does not work.
+- Sidebar toggle does not work.
+
+## As a PWA
+
+```
+(try_panel)
+$ panel convert interactive_cubic_Bezier_curve.py --to pyodide-worker --pwa --title "Interactive Cubic Bezier Curve" --out docs/interactive_cubic_Bezier_curve_pwa
+Successfully converted interactive_cubic_Bezier_curve.py to pyodide-worker target and wrote output to interactive_cubic_Bezier_curve.html.
+Successfully wrote icons and images.
+Successfully wrote site.manifest.
+Successfully wrote serviceWorker.js.
+```
+
+To run, start http server:
+
+```
+(try_panel)
+nordin@ECEns-MBP-4 ~/Documents/Projects/2022_Projects/panel_cubic_bezier (main)*
+$ python -m http.server
+Serving HTTP on :: port 8000 (http://[::]:8000/) ...
+```
+
+and point browser at `http://localhost:8000/docs/interactive_cubic_Bezier_curve_pwa/interactive_cubic_Bezier_curve.html`. It loads faster than the non-pwa version.
+
