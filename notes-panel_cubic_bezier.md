@@ -4,6 +4,17 @@
 [The Easiest Way to Create an Interactive Dashboard in Python:
 Turn Pandas pipelines into a dashboard using hvPlot .interactive](https://towardsdatascience.com/the-easiest-way-to-create-an-interactive-dashboard-in-python-77440f2511d1)
 
+# Install conda environment
+
+See [The Easiest Way to Create an Interactive Dashboard in Python:
+Turn Pandas pipelines into a dashboard using hvPlot .interactive](https://towardsdatascience.com/the-easiest-way-to-create-an-interactive-dashboard-in-python-77440f2511d1).
+
+```
+conda create -n "try_panel" python=3.10
+conda activate try_panel 
+conda install hvplot panel pandas jupyterlab black
+```
+
 # Saturday, 11/5/22
 
 [Start panel notebook from command line](https://panel.holoviz.org/user_guide/Overview.html#command-line):
@@ -17,3 +28,12 @@ Turn Pandas pipelines into a dashboard using hvPlot .interactive](https://toward
 # Monday, 11/7/22
 
 Use `hv.Polygons` to create a unit circle to visually denote start and end point for interactive cubic Bezier curve.
+
+`interactive_cubic_Bezier_curve.py`  
+Convert code from jupyter notebook into a regular python file.  
+Run using:  
+
+    panel serve interactive_cubic_Bezier_curve.py
+    
+
+
