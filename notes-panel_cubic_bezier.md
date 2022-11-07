@@ -30,7 +30,7 @@ conda install hvplot panel pandas jupyterlab black
 
 Use `hv.Polygons` to create a unit circle to visually denote start and end point for interactive cubic Bezier curve.
 
-## Convert to python file
+## Convert to python file and run with `panel serve`
 
 `interactive_cubic_Bezier_curve.py`: Convert code from jupyter notebook into a regular python file. Run using:  
 
@@ -46,17 +46,12 @@ Use [Awesome panel hello-world example](https://github.com/awesome-panel/example
 
 Then open html file in a browser.
     
-## Try running as standalone html file
+## Try running interactive Bezier curve as standalone html file
 
 ```
 (try_panel)
 $ panel convert interactive_cubic_Bezier_curve.py --to pyodide-worker --out docs/interactive_cubic_Bezier_curve
 Successfully converted interactive_cubic_Bezier_curve.py to pyodide-worker target and wrote output to interactive_cubic_Bezier_curve.html.
-```
-
-To run:
-
-```
 ```
 
 To run, start http server:
@@ -97,4 +92,25 @@ Serving HTTP on :: port 8000 (http://[::]:8000/) ...
 ```
 
 and point browser at `http://localhost:8000/docs/interactive_cubic_Bezier_curve_pwa/interactive_cubic_Bezier_curve.html`. It loads faster than the non-pwa version.
+
+## Serve with Github Pages
+
+Follow [How to Deploy a Panel Visualization Dashboard to GitHub Pages: The fastest way to deploy Python data apps](https://towardsdatascience.com/how-to-deploy-a-panel-visualization-dashboard-to-github-pages-2f520fd8660) to serve `docs/` and with browser go to:
+
+    https://gregnordin.github.io/panel_cubic_bezier/interactive_cubic_Bezier_curve/interactive_cubic_Bezier_curve.html
+
+**It works**, subject to the problems noted above.
+
+Note: I changed the repository from private to public so anyone can see it.
+
+
+# Next
+
+- Fix problems above.
+    - Try a different template.
+    - Post problems on Discord.
+- Add explanatory text to app webpage.
+- Improve start and end point section visual presentation.
+- Put start and endpoint arrays and tangent arrays in text area that can be copied as python code?
+
 
