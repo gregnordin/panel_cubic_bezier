@@ -10,3 +10,10 @@ Turn Pandas pipelines into a dashboard using hvPlot .interactive](https://toward
 
     panel serve 2022-11-03_interactive_cubic_bezier.ipynb
 
+[How to Deploy a Panel Visualization Dashboard to GitHub Pages](https://towardsdatascience.com/how-to-deploy-a-panel-visualization-dashboard-to-github-pages-2f520fd8660)
+
+    panel convert 2022-11-03_interactive_cubic_bezier.ipynb --to pyodide-worker --out docs/app
+
+# Monday, 11/7/22
+
+Use `hv.Polygons` to create a unit circle to visually denote start and end point for interactive cubic Bezier curve.
