@@ -105,6 +105,40 @@ Follow [How to Deploy a Panel Visualization Dashboard to GitHub Pages: The faste
 Note: I changed the repository from private to public so anyone can see it.
 
 
+# Tuesday, 11/8/22
+
+## Improve performance
+
+Based on Philipp Rudiger's suggestion at [Github Pages-widget rendering problems](https://discourse.holoviz.org/t/github-pages-widget-rendering-problems/4524), replace
+
+```
+interactive_bezier = pn.bind(
+    bezier_curve_bind,
+    p1_angle_deg_slider,
+    d0_length_slider,
+    d0_angle_deg_slider,
+    d1_length_slider,
+    d1_angle_deg_slider,
+)
+```
+
+with 
+
+```
+interactive_bezier = hv.DynamicMap(
+    bezier_curve_bind, streams={
+        'p1_angle_deg': p1_angle_deg_slider,
+        'd0_length': d0_length_slider,
+        'd0_angle_deg': d0_angle_deg_slider,
+        'd1_length': d1_length_slider,
+        'd1_angle_deg': d1_angle_deg_slider,
+    }
+)
+```
+
+> ...note that you can get a much more performant app.... This ensure that HoloViews updates the individual components rather than redrawing the entire plot.
+
+
 # Next
 
 - Fix problems above.

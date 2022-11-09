@@ -175,7 +175,7 @@ tangent_line_params = dict(
     line_alpha=0.5,
 )
 
-# Interactive Bezier curve
+# Interactive Bezier curve widgets
 p1_angle_deg_slider = pn.widgets.IntSlider(
     name="Angle from x-axis (deg)", start=-180, end=180, value=45
 )
@@ -189,6 +189,7 @@ d1_angle_deg_slider = pn.widgets.IntSlider(
 )
 
 
+# Main function to construct Bezier curve plot with all of its constituent pieces
 def bezier_curve_bind(
     p1_angle_deg, d0_length, d0_angle_deg, d1_length, d1_angle_deg, tt=tt
 ):
@@ -231,18 +232,26 @@ def bezier_curve_bind(
         **p_points_params, color=d1_color
     )
 
-    # tangents = d0_line * d1_line * p_points
-
     return hv_unit_circle() * cubic_bezier_line * d0_line * d1_line * p_points
 
 
-interactive_bezier = pn.bind(
+# interactive_bezier = pn.bind(
+#     bezier_curve_bind,
+#     p1_angle_deg_slider,
+#     d0_length_slider,
+#     d0_angle_deg_slider,
+#     d1_length_slider,
+#     d1_angle_deg_slider,
+# )
+interactive_bezier = hv.DynamicMap(
     bezier_curve_bind,
-    p1_angle_deg_slider,
-    d0_length_slider,
-    d0_angle_deg_slider,
-    d1_length_slider,
-    d1_angle_deg_slider,
+    streams={
+        "p1_angle_deg": p1_angle_deg_slider,
+        "d0_length": d0_length_slider,
+        "d0_angle_deg": d0_angle_deg_slider,
+        "d1_length": d1_length_slider,
+        "d1_angle_deg": d1_angle_deg_slider,
+    },
 )
 
 template = pn.template.FastListTemplate(
