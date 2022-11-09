@@ -141,12 +141,23 @@ interactive_bezier = hv.DynamicMap(
 
 # Next
 
-- Fix problems above.
-    - Try a different template.
-    - Post problems on Holoviz Discourse.
+- &#9989; Fix problems above.
+    - &#10060; Try a different template.
+    - &#9989; Post problems on Holoviz Discourse.
         - [Github Pages-widget rendering problems](https://discourse.holoviz.org/t/github-pages-widget-rendering-problems/4524)
 - Add explanatory text to app webpage.
 - Improve start and end point section visual presentation.
 - Put start and endpoint arrays and tangent arrays in text area that can be copied as python code?
+
+
+# Wednesday, 11/9/22
+
+## Play with plotly `line_3D`
+
+- Use `marker` to make line appear thick in 3D. Setting `line` `width` doesn't give a satisfactory result.
+- Remove background x-y-z panels so it is easier to get a sense of 3 dimensions for a plotted line.
+
+
+
 
 
