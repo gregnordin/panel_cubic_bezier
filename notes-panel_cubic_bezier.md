@@ -158,6 +158,19 @@ interactive_bezier = hv.DynamicMap(
 - Remove background x-y-z panels so it is easier to get a sense of 3 dimensions for a plotted line.
 
 
+# Thursday, 11/10/22
+
+## Begin to work on sequential cubic Bezier curves
+
+### Explore using in and out tangents for each point in curve
+
+`n_points = n_Bezier_segments + 1`
+
+`2022-11-10_sequential_cubic_beziers.ipynb`
+
+- Set up dataframe organization.
+- Append row to dataframe.
+
 
 
 
