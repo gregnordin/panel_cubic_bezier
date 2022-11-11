@@ -189,5 +189,6 @@ interactive_bezier = hv.DynamicMap(
 
 - Link tabulator and scatter plot of points.
 - Include table of absolute positions and change scatter plot to visualize.
-
+- Successfully make interactive sequential Bezier curve with 2 segments.
+- Increase to 3 segments.
 
