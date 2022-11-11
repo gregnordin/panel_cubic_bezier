@@ -171,13 +171,14 @@ interactive_bezier = hv.DynamicMap(
 `link_tabulator_plot.py`
 
 - Successfully change Tabulator values, which updates a dataframe, which updates a df.hvplot() line plot.
+- Key resource: [Linking Tabulator with a HV plot](https://discourse.holoviz.org/t/linking-tabulator-with-a-hv-plot/2377/2).
 
-Next
+## Next
 
 - Replace tabulator with one for points and tangents.
 - Replace dataframe calculated from tabular with one that has sequential cubic Bezier curves.
 - Line plot of sequential cubic Bezier curves.
-- Add scatter plot of points with `name` as P1, P2, etc.
+- Add scatter plot of points with `name` as P0, P1, P2, etc.
 
 
 
