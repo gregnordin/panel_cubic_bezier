@@ -166,10 +166,11 @@ interactive_bezier = hv.DynamicMap(
 
 `n_points = n_Bezier_segments + 1`
 
-`2022-11-10_sequential_cubic_beziers.ipynb`
+`2022-11-10_sequential_cubic_beziers.ipynb` &rarr; didn't work.
 
-- Set up dataframe organization.
-- Append row to dataframe.
+`link_tabulator_plot.py`
+
+- Successfully change Tabulator values, which updates a dataframe, which updates a df.hvplot() line plot.
 
 
 
