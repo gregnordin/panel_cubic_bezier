@@ -58,14 +58,31 @@ plot_params = dict(
     # width=size_px,
     # height=size_px,
     legend="top",
+    aspect="equal",
+    width=400,
+    height=400,
+    xlim=(-3, 3),
+    ylim=(-3, 3),
 )
 bezier_params = dict(
     line_width=5,
     grid=True,
 )
-color1 = "blue"
-color2 = "red"
-color3 = "green"
+colors = [
+    "#1f77b4",
+    "#ff7f0e",
+    "#2ca02c",
+    "#d62728",
+    "#9467bd",
+    "#8c564b",
+    "#e377c2",
+    "#7f7f7f",
+    "#bcbd22",
+    "#17becf",
+]
+color1 = colors[0]
+color2 = colors[1]
+color3 = colors[2]
 
 
 def compute_plot(value):
@@ -91,7 +108,7 @@ def compute_plot(value):
     bezier1 = bez.bezier_curve(p0=points[0], p1=points[1], d0=dout[0], d1=din[1])
     bezier2 = bez.bezier_curve(p0=points[1], p1=points[2], d0=dout[1], d1=din[2])
     bezier3 = bez.bezier_curve(p0=points[2], p1=points[3], d0=dout[2], d1=din[3])
-    scatter = hv.Scatter(points).options(size=10, show_grid=True)
+    scatter = hv.Scatter(points).options(size=10, show_grid=True, color="#e377c2")
     cubic_bezier_line1 = bezier1.hvplot.line(
         **plot_params, **bezier_params, color=color1
     )
@@ -121,29 +138,3 @@ pn.Column(
     absolute_positions,
     plot,
 ).servable()
-
-
-# pars = pd.DataFrame(
-#     {"name": ["A", "B", "C"], "period": [1, 0.5, 0.3], "amplitude": [0.3, 0.4, 0.1]}
-# )
-# xx = np.linspace(0, 1, 100)
-
-
-# def compute_plot(value):
-#     arr = value["amplitude"].to_numpy() * np.sin(
-#         np.outer(2 * np.pi * xx, 1.0 / value["period"].to_numpy())
-#     )
-#     curves = pd.DataFrame(
-#         dict([(value["name"][i], arr[:, i]) for i in range(0, 3)]), index=xx
-#     )
-#     return curves.hvplot(grid=True)
-
-
-# tabedit = pn.widgets.Tabulator(
-#     value=pars, show_index=False, selectable=True, theme="site", height=140
-# )
-# plot = pn.bind(compute_plot, value=tabedit)
-
-# pn.template.FastListTemplate(
-#     site="Awesome Panel", title="Table Edits", main=[tabedit, plot]
-# ).servable()

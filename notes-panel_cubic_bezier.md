@@ -175,10 +175,10 @@ interactive_bezier = hv.DynamicMap(
 
 ## Next
 
-- Replace tabulator with one for points and tangents.
-- Replace dataframe calculated from tabular with one that has sequential cubic Bezier curves.
-- Line plot of sequential cubic Bezier curves.
-- Add scatter plot of points with `name` as P0, P1, P2, etc.
+- &#9989; Replace tabulator with one for points and tangents.
+- &#9989; Replace dataframe calculated from tabular with one that has sequential cubic Bezier curves.
+- &#9989; Line plot of sequential cubic Bezier curves.
+- &#9989; Add scatter plot of points ~~with `name` as P0, P1, P2, etc.~~
 
 
 # Friday, 11/11/22
@@ -191,4 +191,13 @@ interactive_bezier = hv.DynamicMap(
 - Include table of absolute positions and change scatter plot to visualize.
 - Successfully make interactive sequential Bezier curve with 2 segments.
 - Increase to 3 segments.
+
+## Next
+
+- Automate for variable number of segments.
+- &#9989; Pad the x and y limits of plot (or fix the limits).
+- Better colors.
+- Make colors cyclic.
+- Add switch to change colors between cyclic and the same.
+
 
