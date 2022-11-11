@@ -181,5 +181,12 @@ interactive_bezier = hv.DynamicMap(
 - Add scatter plot of points with `name` as P0, P1, P2, etc.
 
 
+# Friday, 11/11/22
+
+## Continue working on sequential cubic Bezier curves
+
+`panel_tabulator/2_tabulator_cubic_Bezier_params.py`
+
+- Link tabulator and scatter plot of points.
 
 
