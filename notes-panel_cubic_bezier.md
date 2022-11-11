@@ -188,5 +188,6 @@ interactive_bezier = hv.DynamicMap(
 `panel_tabulator/2_tabulator_cubic_Bezier_params.py`
 
 - Link tabulator and scatter plot of points.
+- Include table of absolute positions and change scatter plot to visualize.
 
 
