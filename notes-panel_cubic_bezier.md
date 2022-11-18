@@ -201,3 +201,14 @@ interactive_bezier = hv.DynamicMap(
 - Add switch to change colors between cyclic and the same.
 
 
+# Friday, 11/18/22
+
+## How grab points in plot with mouse?
+
+See `try_stuff/lib_holoviews.py` which is from [Awesome Panel - HoloViews](https://www.awesome-panel.org/lib_holoviews). I need to look into `holoviews.streams.CurveEdit`, which adds a point grabbing icon to a plot's tools.
+
+Also note use of `hv.Table`, which is considerably simpler than Tabulator.
+
+
+
+
